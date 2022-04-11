@@ -9,6 +9,7 @@ export const HeaderWrapper = styled.header<HeaderProps>`
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 10;
 
   width: 100%;
   border-bottom: 1px solid transparent;
@@ -16,7 +17,6 @@ export const HeaderWrapper = styled.header<HeaderProps>`
   ${props =>
     props.isSticky &&
     css`
-      z-index: 10;
       background: rgba(0, 0, 0, 0.15);
 
       border-color: ${({ theme }) => theme.colorsGrey.g12};

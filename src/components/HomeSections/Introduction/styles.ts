@@ -1,0 +1,105 @@
+import styled from 'styled-components'
+import Container from '../../../styles/layout/Container'
+
+export const IntroductionWrapper = styled(Container)`
+  display: grid;
+
+  grid-template-columns: 2fr 3fr;
+  @media (max-width: 700px) {
+    grid-template-columns: auto 1fr;
+    gap: ${props => props.theme.spaces.small_1};
+  }
+
+  gap: ${props => props.theme.spaces.small_3};
+`
+
+export const IntroductionImage = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+
+  @media (max-width: 700px) {
+    .image-wrapper {
+      display: none;
+    }
+  }
+
+  .social-links {
+    width: 20px;
+    height: 100%;
+    flex-shrink: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    gap: ${props => props.theme.spaces.small_1};
+    margin-right: ${props => props.theme.spaces.small_1};
+
+    svg {
+      font-size: 2.4rem;
+
+      transition: transform 400ms ease, filter 400ms ease;
+
+      &:hover {
+        transform: scale(1.18);
+        filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.5));
+      }
+    }
+
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .image-wrapper {
+    width: 100%;
+    height: 380px;
+    position: relative;
+  }
+`
+
+export const IntroductionText = styled.div`
+  h2 {
+    margin-bottom: ${props => props.theme.spaces.small_2};
+    font-size: 5.6rem;
+    line-height: 5.4rem;
+
+    @media (max-width: 900px) {
+      font-size: 4.8rem;
+    }
+
+    span {
+      color: ${props => props.theme.colorsPrimary.p800};
+    }
+  }
+
+  @media (max-width: 800px) {
+    h2 {
+      font-size: 4.2rem;
+      line-height: 4.4rem;
+      margin-bottom: ${props => props.theme.spaces.small_1};
+    }
+    p {
+      font-size: 1.4rem;
+      line-height: 1.5;
+    }
+  }
+
+  @media (max-width: 600px) {
+    h2 {
+      font-size: 3.6rem;
+      line-height: 3.8rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+      line-height: 1.5;
+    }
+  }
+`
