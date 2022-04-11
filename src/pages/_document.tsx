@@ -30,26 +30,32 @@ export default class MyDocument extends Document {
           <meta name="robots" content="index" />
           <meta
             property="og:title"
-            content="Ezequiel Soares - Front End, UX/UI"
+            content="Ezequiel Soares - Front End Developer"
           />
           <meta
             property="og:description"
             content="Portfolio de Ezequiel Soares, desenvolvedor Front End e entusiasta UX/UI designer."
           />
-          <meta property="og:url" content="" />
+          <meta
+            property="og:url"
+            content="https://portfolio-mrezequiel.vercel.app/"
+          />
           <meta property="og:site_name" content="Portfolio" />
           <meta property="og:type" content="website" />
           <meta property="og:image" content="/cover-img.png" />
 
           <meta
             name="twitter:title"
-            content="Ezequiel Soares - Front End, UX/UI"
+            content="Ezequiel Soares - Front End Developer"
           />
           <meta
             name="twitter:description"
             content="Portfolio de Ezequiel Soares, desenvolvedor Front End e entusiasta UX/UI designer."
           />
-          <meta name="twitter:url" content="" />
+          <meta
+            name="twitter:url"
+            content="https://portfolio-mrezequiel.vercel.app/"
+          />
           <meta name="twitter:card" content="summary" />
           <meta name="twitter:image" content="/cover-img.png" />
           <meta name="twitter:creator" content="@ezequield3v" />
