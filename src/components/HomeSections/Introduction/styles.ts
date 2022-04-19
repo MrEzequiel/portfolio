@@ -3,6 +3,8 @@ import Container from '../../../styles/layout/Container'
 
 export const IntroductionWrapper = styled(Container)`
   display: grid;
+  height: calc(80vh - 80px);
+  align-items: center;
 
   grid-template-columns: 2fr 3fr;
   @media (max-width: 700px) {
@@ -101,5 +103,31 @@ export const IntroductionText = styled.div`
       font-size: 1.2rem;
       line-height: 1.5;
     }
+  }
+`
+
+export const ScrollIndicator = styled.div`
+  position: absolute;
+  bottom: 40px;
+  left: 0;
+  right: 0;
+  z-index: 2;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @keyframes bounce {
+      50% {
+        transform: translateY(-50%);
+      }
+    }
+
+    animation: bounce 2.8s ease infinite;
   }
 `

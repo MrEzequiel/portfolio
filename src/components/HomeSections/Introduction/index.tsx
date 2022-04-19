@@ -2,11 +2,12 @@ import Image from 'next/image'
 import { FC } from 'react'
 import Section from '../../../styles/layout/Section'
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
-import { MdTextSnippet } from 'react-icons/md'
+import { MdArrowDropDown, MdTextSnippet } from 'react-icons/md'
 import {
   IntroductionImage,
   IntroductionText,
-  IntroductionWrapper
+  IntroductionWrapper,
+  ScrollIndicator
 } from './styles'
 import Text from '../../../styles/layout/Text'
 import { useTheme } from 'styled-components'
@@ -20,10 +21,8 @@ const Introduction: FC = () => {
       isBlack
       patternPositionX="left"
       patternPositionY="bottom"
-      style={{
-        marginTop: '85px'
-      }}
       id="introduction"
+      style={{ position: 'relative' }}
     >
       <IntroductionWrapper>
         <IntroductionImage>
@@ -79,6 +78,12 @@ const Introduction: FC = () => {
           </Button>
         </IntroductionText>
       </IntroductionWrapper>
+
+      <ScrollIndicator>
+        <a href="#about-me">
+          <MdArrowDropDown size={40} color={theme.colorsPrimary.p200} />
+        </a>
+      </ScrollIndicator>
     </Section>
   )
 }
