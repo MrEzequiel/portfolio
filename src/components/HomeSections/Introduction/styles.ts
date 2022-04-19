@@ -15,6 +15,29 @@ export const IntroductionWrapper = styled(Container)`
   gap: ${props => props.theme.spaces.small_3};
 `
 
+export const IntruductionBackground = styled.div`
+  background: ${props =>
+    `linear-gradient(288.08deg,${props.theme.colorsGrey.g12} -4.38%, ${props.theme.colorsGrey.g11} 117.67%)`};
+
+  height: 100%;
+  width: 100%;
+
+  background-size: 400% 400%;
+  animation: gradient 8s ease infinite;
+
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+`
+
 export const IntroductionImage = styled.div`
   display: flex;
   justify-content: center;

@@ -62,6 +62,7 @@ const ButtonStyle = styled.button<ButtonProps>`
   justify-content: center;
   align-items: center;
   gap: ${props => props.theme.spaces.extra_small_2};
+  -webkit-tap-highlight-color: transparent;
 
   background: ${props => getBackgroundColor(props.variant, props.theme)};
   box-shadow: ${props => props.theme.shadows.small};

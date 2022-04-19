@@ -17,8 +17,8 @@ export const HeaderWrapper = styled.header<HeaderProps>`
   ${props =>
     props.isSticky &&
     css`
-      background: rgba(0, 0, 0, 0.8);
-      backdrop-filter: blur(18px);
+      background: rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(4px);
 
       border-color: ${({ theme }) => theme.colorsGrey.g12};
     `}
@@ -47,6 +47,7 @@ export const NavBarContainer = styled.ul`
   gap: ${({ theme }) => theme.spaces.small_1};
 
   li a {
+    -webkit-tap-highlight-color: transparent;
     display: block;
     white-space: nowrap;
     padding: ${({ theme }) => theme.spaces.small_1};
