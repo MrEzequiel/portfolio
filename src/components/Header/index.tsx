@@ -32,7 +32,7 @@ const Header: FC = () => {
           <nav>
             <NavBarContainer>
               <li>
-                <Text href="#about" as="a" variant="body2">
+                <Text href="#about-me" as="a" variant="body2">
                   Sobre Mim
                 </Text>
               </li>

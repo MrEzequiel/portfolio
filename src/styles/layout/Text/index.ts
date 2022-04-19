@@ -1,6 +1,7 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 interface TextProps {
+  divider?: boolean
   italic?: boolean
   weight?: number
   variant?:
@@ -91,6 +92,7 @@ const getFontWeight = (variant: TextProps['variant']) => {
 }
 
 const Text = styled.p<TextProps>`
+  position: relative;
   font-size: ${props => getFontSize(props.variant)};
   line-height: ${props => getLineHeight(props.variant)};
 
@@ -99,9 +101,28 @@ const Text = styled.p<TextProps>`
 
   font-style: ${props => (props.italic ? 'italic' : 'normal')};
   font-family: ${props => getFontFamily(props.variant)};
+
+  ${props =>
+    props.divider &&
+    css`
+    &:before {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 80px;
+      height: 4px;
+      border-radius: 5px;
+      background-color: ${props => props.theme.colorsPrimary.p800};
+
+      @media (max-width: 680px) {
+        width: 60px;
+      }
+    `}
 `
 
 Text.defaultProps = {
+  divider: false,
   variant: 'body1',
   italic: false
 }

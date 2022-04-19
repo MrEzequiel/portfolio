@@ -17,7 +17,8 @@ export const HeaderWrapper = styled.header<HeaderProps>`
   ${props =>
     props.isSticky &&
     css`
-      background: rgba(0, 0, 0, 0.15);
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(18px);
 
       border-color: ${({ theme }) => theme.colorsGrey.g12};
     `}
