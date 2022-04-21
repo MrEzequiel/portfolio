@@ -5,6 +5,7 @@ import Document, {
   Head,
   DocumentContext
 } from 'next/document'
+import { Fragment } from 'react'
 import { ServerStyleSheet } from 'styled-components'
 
 export default class MyDocument extends Document {
@@ -20,7 +21,7 @@ export default class MyDocument extends Document {
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
           <meta
             name="viewport"
-            content="width=device-width, initial-scale=1.0"
+            content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0,user-scalable=0"
           />
           <meta
             name="description"
@@ -91,10 +92,10 @@ export default class MyDocument extends Document {
       return {
         ...initialProps,
         styles: [
-          <>
+          <Fragment key="styles">
             {initialProps.styles}
             {sheet.getStyleElement()}
-          </>
+          </Fragment>
         ]
       }
     } finally {
