@@ -13,6 +13,7 @@ export default createGlobalStyle`
 
   :root {
     scroll-behavior: smooth;
+    scroll-padding-top: ${({ theme }) => theme.spaces.medium_2};
     /* hack to rem = px */
     font-size: 62.5%;
   }

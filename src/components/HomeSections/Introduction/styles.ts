@@ -13,6 +13,13 @@ export const IntroductionWrapper = styled(Container)`
   }
 
   gap: ${props => props.theme.spaces.small_3};
+
+  @media (max-width: 400px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 `
 
 export const IntruductionBackground = styled.div`
@@ -79,6 +86,21 @@ export const IntroductionImage = styled.div`
       display: flex;
       justify-content: center;
       align-items: center;
+    }
+  }
+
+  @media (max-width: 400px) {
+    width: auto;
+    height: auto;
+
+    .social-links {
+      width: auto;
+      height: auto;
+      flex-direction: row;
+
+      svg {
+        color: ${props => props.theme.colorsPrimary.p1400};
+      }
     }
   }
 

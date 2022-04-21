@@ -4,27 +4,18 @@ import { useTheme } from 'styled-components'
 import useMediaQuery from '../../../hooks/useMediaQuery'
 import Section from '../../../styles/layout/Section'
 import Text from '../../../styles/layout/Text'
+import TitleSection from '../../TitleSection'
 import { AboutMeContainer, TextContainer } from './styles'
 
 const AboutMe: FC = () => {
   const theme = useTheme()
-  const isTablet = useMediaQuery('(max-width: 768px)')
   const isMobile = useMediaQuery('(max-width: 576px)')
 
   return (
     <Section id="about-me" patternPositionX="right" patternPositionY="top">
       <AboutMeContainer>
         <div>
-          <Text
-            as="h2"
-            variant={
-              (isMobile && 'heading3') || (isTablet && 'heading4') || 'heading5'
-            }
-            italic
-            divider
-          >
-            Sobre Mim
-          </Text>
+          <TitleSection>Sobre mim</TitleSection>
 
           <TextContainer>
             <Text as="p" variant={isMobile ? 'body2' : 'body3'}>

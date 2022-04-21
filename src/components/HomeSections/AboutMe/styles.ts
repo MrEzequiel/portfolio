@@ -16,7 +16,7 @@ export const AboutMeContainer = styled(Container)`
     grid-template-columns: 4fr 2fr;
   }
 
-  @media (max-width: 500px) {
+  @media (max-width: 600px) {
     grid-template-columns: 1fr;
 
     .ilustration-container {

@@ -24,7 +24,11 @@ const Introduction: FC = () => {
         patternPositionX="left"
         patternPositionY="bottom"
         id="introduction"
-        style={{ position: 'relative', background: 'transparent' }}
+        style={{
+          position: 'relative',
+          background: 'transparent',
+          padding: `${theme.spaces.medium_1} 0 !important`
+        }}
       >
         <IntroductionWrapper>
           <IntroductionImage>

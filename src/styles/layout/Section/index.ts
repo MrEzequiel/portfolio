@@ -16,6 +16,24 @@ const Section = styled.section<HeaderProps>`
   padding-top: ${props => props.theme.spaces.medium_1};
   padding-bottom: ${props => props.theme.spaces.medium_1};
 
+  @media (max-width: 1050px) {
+    padding: ${props => props.theme.spaces.medium_1};
+  }
+
+  @media (max-width: 840px) {
+    padding-left: ${props => props.theme.spaces.small_2};
+    padding-right: ${props => props.theme.spaces.small_2};
+  }
+
+  @media (max-width: 600px) {
+    padding: ${props => props.theme.spaces.small_2};
+  }
+
+  @media (max-width: 480px) {
+    padding: ${props =>
+      `${props.theme.spaces.small_2} ${props.theme.spaces.small_1}`};
+  }
+
   &::before {
     content: ${props => (props.disablePattern ? '""' : 'url("/detail.svg")')};
     position: absolute;

@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
 
-interface TextProps {
+export interface TextProps {
   divider?: boolean
   italic?: boolean
   weight?: number
@@ -13,6 +13,7 @@ interface TextProps {
     | 'body1'
     | 'body2'
     | 'body3'
+  alignCenter?: boolean
 }
 
 const getFontSize = (variant: TextProps['variant']) => {
@@ -103,6 +104,13 @@ const Text = styled.p<TextProps>`
   font-family: ${props => getFontFamily(props.variant)};
 
   ${props =>
+    props.alignCenter &&
+    css`
+      width: max-content;
+      margin: 0 auto;
+    `}
+
+  ${props =>
     props.divider &&
     css`
     &:before {
@@ -122,6 +130,7 @@ const Text = styled.p<TextProps>`
 `
 
 Text.defaultProps = {
+  alignCenter: false,
   divider: false,
   variant: 'body1',
   italic: false
