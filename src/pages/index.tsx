@@ -7,13 +7,17 @@ import Projects from '../components/HomeSections/Projects'
 import supabase from '../services/supabase'
 
 import IKnowledge from '../interfaces/IKnowledge'
+import IFormation from '../interfaces/IFormation'
+import Formation from '../components/HomeSections/Formation'
 
 export const getStaticProps: GetStaticProps = async () => {
   const { data: knowledge } = await supabase.from('knowledge').select('*')
+  let { data: formations } = await supabase.from('formation').select('*')
 
   return {
     props: {
-      knowledge
+      knowledge,
+      formations
     },
     revalidate: 60 * 60 * 24 // 1 day
   }
@@ -21,15 +25,17 @@ export const getStaticProps: GetStaticProps = async () => {
 
 interface HomeProps {
   knowledge: IKnowledge[]
+  formations: IFormation[]
 }
 
-const Home: NextPage<HomeProps> = ({ knowledge }) => {
+const Home: NextPage<HomeProps> = ({ knowledge, formations }) => {
   return (
     <>
       <Introduction />
       <AboutMe />
       <Projects />
       <Knowledge knowledge={knowledge} />
+      <Formation formations={formations} />
     </>
   )
 }

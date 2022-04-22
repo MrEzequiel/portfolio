@@ -63,7 +63,7 @@ const main = {
 
   shadows: {
     small: '0px 4px 4px -1px rgba(0, 0, 0, 0.1)',
-    medium: '0px 0px 4px 4px rgba(0, 0, 0, 0.1)',
+    medium: '0px 4px 4px 4px rgba(0, 0, 0, 0.1)',
     large: '0px 8px 8px -2px rgba(0, 0, 0, 0.1)',
     extra_large: '0px 16px 16px -4px rgba(0, 0, 0, 0.1)'
   }
