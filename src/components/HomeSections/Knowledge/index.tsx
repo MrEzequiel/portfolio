@@ -44,6 +44,7 @@ const Knowledge: FC<KnowledgeProps> = ({ knowledge }) => {
                   alt={knowledgeItem.name}
                   layout="fill"
                   objectFit="contain"
+                  draggable={false}
                 />
               </div>
             </KnowledgeItem>

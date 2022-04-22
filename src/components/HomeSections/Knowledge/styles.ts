@@ -29,6 +29,7 @@ export const KnowledgeItem = styled.li<KnowledgeItemProps>`
   cursor: pointer;
 
   display: flex;
+  -webkit-tap-highlight-color: transparent;
   justify-content: center;
   align-items: center;
   width: 75px;
