@@ -14,7 +14,7 @@ const Footer: FC = () => {
   const theme = useTheme()
 
   return (
-    <FooterContainer disablePattern>
+    <FooterContainer disablePattern id="contact">
       <FooterContent>
         <Text as="p" variant="body2" style={{ color: theme.colorsGrey.g4 }}>
           Quer bater um papo comigo ou me convidar para um projeto? Meus

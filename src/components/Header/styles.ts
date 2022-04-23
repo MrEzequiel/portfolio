@@ -37,63 +37,6 @@ export const HeaderInner = styled(Container)`
   padding-bottom: ${({ theme }) => theme.spaces.small_1};
 
   @media (max-width: 750px) {
-    flex-direction: column;
     gap: ${({ theme }) => theme.spaces.small_1};
-  }
-`
-
-export const NavBarContainer = styled.ul`
-  display: flex;
-  gap: ${({ theme }) => theme.spaces.small_1};
-
-  li a {
-    -webkit-tap-highlight-color: transparent;
-    display: block;
-    white-space: nowrap;
-    padding: ${({ theme }) => theme.spaces.small_1};
-    color: ${({ theme }) => theme.colorsGrey.g4};
-    position: relative;
-
-    @media (max-width: 750px) {
-      border: 1px solid ${({ theme }) => theme.colorsGrey.g11};
-      border-radius: ${({ theme }) => theme.spaces.extra_small_2};
-      padding: ${({ theme }) => theme.spaces.extra_small_2};
-      background: ${({ theme }) => theme.colorsGrey.g12};
-
-      transition: background 0.3s ease;
-
-      &:hover {
-        background: ${({ theme }) => theme.colorsGrey.g11};
-      }
-
-      &::before {
-        display: none;
-      }
-    }
-
-    @media (max-width: 400px) {
-      font-size: 1.2rem;
-      padding: ${({ theme }) => theme.spaces.extra_small_1};
-    }
-
-    &::before {
-      content: '';
-      position: absolute;
-      bottom: -${({ theme }) => theme.spaces.small_1};
-      right: 0;
-      width: 0;
-      height: 1px;
-      background: ${({ theme }) => theme.colorsGrey.g4};
-      transition: width 0.3s ease;
-    }
-
-    &:hover {
-      color: ${({ theme }) => theme.colorsGrey.g2};
-
-      &::before {
-        width: 100%;
-        left: 0;
-      }
-    }
   }
 `

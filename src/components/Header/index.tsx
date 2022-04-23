@@ -1,8 +1,9 @@
-import { useRouter } from 'next/router'
 import { FC, useEffect, useState } from 'react'
-import Container from '../../styles/layout/Container'
+import { useRouter } from 'next/router'
+
 import Text from '../../styles/layout/Text'
-import { HeaderInner, HeaderWrapper, NavBarContainer } from './styles'
+import HomeHeader from './HomeHeader'
+import { HeaderInner, HeaderWrapper } from './styles'
 
 const Header: FC = () => {
   const { pathname } = useRouter()
@@ -28,32 +29,7 @@ const Header: FC = () => {
           Ezequiel Soares
         </Text>
 
-        {pathname === '/' && (
-          <nav>
-            <NavBarContainer>
-              <li>
-                <Text as="a" href="#projects" variant="body2">
-                  Projetos
-                </Text>
-              </li>
-              <li>
-                <Text as="a" href="#formation" variant="body2">
-                  Formação
-                </Text>
-              </li>
-              <li>
-                <Text href="#experience" as="a" variant="body2">
-                  Experiência
-                </Text>
-              </li>
-              <li>
-                <Text href="#contact" as="a" variant="body2">
-                  Contato
-                </Text>
-              </li>
-            </NavBarContainer>
-          </nav>
-        )}
+        {pathname === '/' && <HomeHeader />}
       </HeaderInner>
     </HeaderWrapper>
   )
