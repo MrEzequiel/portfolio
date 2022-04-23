@@ -55,7 +55,7 @@ const Experience: FC<ExperienceProps> = ({ experiences }) => {
       }}
       id="experience"
     >
-      <TitleSection alignCenter>Experience</TitleSection>
+      <TitleSection alignCenter>Experiência</TitleSection>
 
       <ExperienceContainer>
         <ExperienceList>

@@ -109,7 +109,7 @@ export const ExperienceItem = styled.li`
   .experience-techs {
     display: flex;
     align-items: center;
-    gap: ${props => props.theme.spaces.extra_small_1};
+    gap: ${props => props.theme.spaces.extra_small_2};
     margin-top: ${props => props.theme.spaces.small_1};
     flex-wrap: wrap;
 
@@ -150,6 +150,21 @@ export const ExperienceItem = styled.li`
         right: -38px;
         left: initial;
       }
+    }
+  }
+
+  @media (max-width: 500px) {
+    .experience-header h4 {
+      font-size: 1.8rem;
+    }
+
+    .company-logo {
+      width: 20px;
+      height: 20px;
+    }
+
+    .experience-info p {
+      font-size: 1.4rem;
     }
   }
 `

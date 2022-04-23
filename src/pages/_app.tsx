@@ -1,6 +1,7 @@
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import { ThemeProvider } from 'styled-components'
+import Footer from '../components/Footer'
 import Header from '../components/Header'
 import GlobalStyles from '../styles/GlobalStyles'
 import main from '../styles/theme/main'
@@ -18,6 +19,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
       <Header />
       <Component {...pageProps} />
+      <Footer />
       <GlobalStyles />
     </ThemeProvider>
   )
