@@ -29,12 +29,17 @@ export const FooterContent = styled(Container)`
 
   @media (max-width: 650px) {
     grid-template-columns: 1fr;
+    gap: ${props => props.theme.spaces.small_2};
 
     &::before {
       width: 40px;
       height: 40px;
       border-radius: 20px 0px 0px 0px;
       top: -50px;
+    }
+
+    & > p {
+      margin-top: ${props => props.theme.spaces.small_2};
     }
   }
 `
@@ -83,13 +88,21 @@ export const FooterLink = styled.li`
       transition: all 0.3s ease;
     }
 
-    &:hover {
+    &:hover,
+    &:focus,
+    &:active,
+    &:focus-within {
       color: ${({ theme }) => theme.colorsPrimary.p100};
 
       &::before {
         right: 0;
         width: 100%;
       }
+    }
+
+    &:focus-within,
+    &:focus {
+      outline: ${({ theme }) => `1px solid ${theme.colorsPrimary.p800}`};
     }
   }
 `

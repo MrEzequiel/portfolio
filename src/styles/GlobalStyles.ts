@@ -33,6 +33,7 @@ export default createGlobalStyle`
     text-decoration: none;
     color: inherit;
     font-family: inherit;
+    -webkit-tap-highlight-color: transparent;
   }
 
   ol,
@@ -46,5 +47,6 @@ export default createGlobalStyle`
     border: none;
     color: inherit;
     font-family: inherit;
+    -webkit-tap-highlight-color: transparent;
   }
 `
