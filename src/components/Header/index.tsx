@@ -32,11 +32,6 @@ const Header: FC = () => {
           <nav>
             <NavBarContainer>
               <li>
-                <Text href="#about-me" as="a" variant="body2">
-                  Sobre Mim
-                </Text>
-              </li>
-              <li>
                 <Text as="a" href="#projects" variant="body2">
                   Projetos
                 </Text>
@@ -44,6 +39,11 @@ const Header: FC = () => {
               <li>
                 <Text as="a" href="#formation" variant="body2">
                   Formação
+                </Text>
+              </li>
+              <li>
+                <Text href="#experience" as="a" variant="body2">
+                  Experiência
                 </Text>
               </li>
               <li>
