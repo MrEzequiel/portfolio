@@ -4,6 +4,7 @@ import { useRouter } from 'next/router'
 import Text from '../../styles/layout/Text'
 import HomeHeader from './HomeHeader'
 import { HeaderInner, HeaderWrapper } from './styles'
+import Link from 'next/link'
 
 const Header: FC = () => {
   const { pathname } = useRouter()
@@ -25,9 +26,11 @@ const Header: FC = () => {
   return (
     <HeaderWrapper isSticky={isSticky}>
       <HeaderInner>
-        <Text as="h1" italic variant="heading1">
-          Ezequiel Soares
-        </Text>
+        <Link href="/" passHref>
+          <Text as="h1" italic variant="heading1" style={{ cursor: 'pointer' }}>
+            Ezequiel Soares
+          </Text>
+        </Link>
 
         {pathname === '/' && <HomeHeader />}
       </HeaderInner>

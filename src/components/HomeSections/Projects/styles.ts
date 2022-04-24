@@ -16,6 +16,7 @@ export const ProjectList = styled.ul`
 `
 
 export const ProjectItem = styled.li`
+  cursor: pointer;
   width: 100%;
   background: ${({ theme }) =>
     `linear-gradient(180deg, ${theme.colorsGrey.g10} 0%, ${theme.colorsGrey.g11} 100%)`};

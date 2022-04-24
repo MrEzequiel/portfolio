@@ -1,4 +1,4 @@
-import styled, { DefaultTheme, useTheme } from 'styled-components'
+import styled, { css, DefaultTheme, useTheme } from 'styled-components'
 
 interface ButtonProps {
   variant: 'contained' | 'outlined' | 'text'
@@ -73,6 +73,8 @@ const ButtonStyle = styled.button<ButtonProps>`
 
   transition: box-shadow 400ms ease, background 400ms ease, outline 100ms ease;
 
+  ${props => props.variant === 'text' && 'box-shadow: none'};
+
   &:hover {
     box-shadow: ${props => props.theme.shadows.medium};
   }
@@ -92,6 +94,15 @@ const ButtonStyle = styled.button<ButtonProps>`
     box-shadow: ${props => props.theme.shadows.medium},
       0 0 0 4px ${props => props.theme.colorsPrimary.p400};
   }
+
+  ${props =>
+    props.variant === 'outlined' &&
+    css`
+      box-shadow: none;
+      background: none;
+      border: 2px solid ${props => props.theme.colorsPrimary.p100};
+      color: ${props => props.theme.colorsPrimary.p800};
+    `};
 `
 
 ButtonStyle.defaultProps = {

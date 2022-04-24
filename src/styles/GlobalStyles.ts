@@ -22,6 +22,12 @@ export default createGlobalStyle`
     font: 300 1.6rem ${({ theme }) => theme.fonts.body};
     background: ${({ theme }) => theme.colorsGrey.g12};
     color: ${({ theme }) => theme.colorsGrey.g2};
+
+    #__next {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
   }
 
   img {

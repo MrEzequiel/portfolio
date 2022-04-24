@@ -4,6 +4,7 @@ import Section from '../../styles/layout/Section'
 
 export const FooterContainer = styled(Section)`
   background-color: #000;
+  margin-top: auto;
 `
 
 export const FooterContent = styled(Container)`
