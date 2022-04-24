@@ -1,10 +1,22 @@
 import type { AppProps } from 'next/app'
+
 import Head from 'next/head'
+import Router from 'next/router'
+
 import { ThemeProvider } from 'styled-components'
+
 import Footer from '../components/Footer'
 import Header from '../components/Header'
 import GlobalStyles from '../styles/GlobalStyles'
 import main from '../styles/theme/main'
+
+import NProgress from 'nprogress'
+
+Router.events.on('routeChangeStart', () => {
+  NProgress.start()
+})
+Router.events.on('routeChangeComplete', () => NProgress.done())
+Router.events.on('routeChangeError', () => NProgress.done())
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

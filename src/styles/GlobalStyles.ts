@@ -1,6 +1,42 @@
 import { createGlobalStyle } from 'styled-components'
 
 export default createGlobalStyle`
+   /* nprogress lib style */
+   #nprogress {
+    pointer-events: none;
+  }
+  #nprogress .bar {
+    background: ${({ theme }) => theme.colorsPrimary.p800};
+    position: fixed;
+    z-index: 1024;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+  }
+  /* Fancy blur effect */
+  #nprogress .peg {
+    display: block;
+    position: absolute;
+    right: 0px;
+    width: 100px;
+    height: 100%;
+    box-shadow: 0 0 10px ${props =>
+      props.theme.colorsPrimary.p1400}, 0 0 5px ${props =>
+  props.theme.colorsPrimary.p1400};
+    opacity: 1.0;
+    transform: rotate(3deg) translate(0px, -4px);
+  }
+  .nprogress-custom-parent {
+    overflow: hidden;
+    position: relative;
+  }
+  .nprogress-custom-parent #nprogress .spinner,
+  .nprogress-custom-parent #nprogress .bar {
+    position: absolute;
+  }
+
+
   *,
   *:before,
   *:after {
