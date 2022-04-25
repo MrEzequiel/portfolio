@@ -71,6 +71,7 @@ export default class MyDocument extends Document {
         </Head>
         <body>
           <Main />
+          <div id="select" />
           <NextScript />
         </body>
       </Html>

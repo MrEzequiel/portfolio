@@ -16,7 +16,7 @@ import useMediaQuery from '../../../hooks/useMediaQuery'
 export const typesProjects = [
   {
     title: 'Desafios',
-    image: '/challange-icon.svg',
+    image: '/challenge-icon.svg',
     slug: 'desafios',
     description:
       'Projetos desenvolvidos em ideias extraídas de sites específico em desenvolvimento.'

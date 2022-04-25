@@ -5,6 +5,7 @@ import Text from '../../styles/layout/Text'
 import HomeHeader from './HomeHeader'
 import { HeaderInner, HeaderWrapper } from './styles'
 import Link from 'next/link'
+import DropdownProject from './DropdownProject'
 
 const Header: FC = () => {
   const { pathname } = useRouter()
@@ -32,7 +33,7 @@ const Header: FC = () => {
           </Text>
         </Link>
 
-        {pathname === '/' && <HomeHeader />}
+        {pathname === '/' ? <HomeHeader /> : <DropdownProject />}
       </HeaderInner>
     </HeaderWrapper>
   )
