@@ -127,7 +127,7 @@ const Projects: NextPage<ProjectsProps> = ({ projects, projectInfo }) => {
               </div>
 
               <div className="content">
-                <Text as="h5" variant="heading1">
+                <Text as="h3" variant="heading1">
                   {project.title}
                 </Text>
 
