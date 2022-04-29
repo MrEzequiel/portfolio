@@ -128,7 +128,6 @@ export const ExperienceItem = styled.li`
 
       &:hover {
         box-shadow: 0px 0px 8px rgba(244, 246, 255, 0.25);
-        font-size: 1.4rem;
       }
     }
   }

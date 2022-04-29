@@ -14,6 +14,7 @@ import {
 import { ptBR } from 'date-fns/locale'
 import { useTheme } from 'styled-components'
 import useMediaQuery from '../../../hooks/useMediaQuery'
+import SkeletonPlaceholder from '../../../utils/SkeletonPlaceholder'
 
 interface ExperienceProps {
   experiences: IExperience[]
@@ -67,6 +68,8 @@ const Experience: FC<ExperienceProps> = ({ experiences }) => {
                     src={experience.logo_company}
                     alt={experience.company}
                     layout="fill"
+                    placeholder="blur"
+                    blurDataURL={SkeletonPlaceholder()}
                   />
                 </div>
                 <Text as="h4" variant="heading1" style={{ fontWeight: 400 }}>

@@ -120,7 +120,6 @@ export const ProjectItem = styled.li`
 
         &:hover {
           box-shadow: 0px 0px 8px rgba(37, 39, 52, 0.8);
-          font-size: 1.4rem;
         }
       }
     }

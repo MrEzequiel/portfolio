@@ -20,6 +20,7 @@ import {
   ProjectList,
   ProjectWrapper
 } from '../../styles/ProjectPageStyle'
+import SkeletonPlaceholder from '../../utils/SkeletonPlaceholder'
 
 interface IProjectInfo {
   title: string
@@ -119,6 +120,8 @@ const Projects: NextPage<ProjectsProps> = ({ projects, projectInfo }) => {
                     objectFit="cover"
                     objectPosition="top"
                     quality={90}
+                    placeholder="blur"
+                    blurDataURL={SkeletonPlaceholder()}
                     typeof="gif"
                   />
                 ) : (
