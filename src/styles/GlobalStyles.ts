@@ -45,6 +45,7 @@ export default createGlobalStyle`
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    -webkit-tap-highlight-color: transparent;
   }
 
   :root {
@@ -64,6 +65,27 @@ export default createGlobalStyle`
       flex-direction: column;
       min-height: 100vh;
     }
+  }
+
+  ::-webkit-scrollbar {
+    width: 7px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: ${({ theme }) => theme.colorsGrey.g12};
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: ${({ theme }) => theme.colorsPrimary.p800};
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: ${({ theme }) => theme.colorsPrimary.p900};
+  }
+
+  ::-webkit-scrollbar-thumb:active {
+    background: ${({ theme }) => theme.colorsPrimary.p600};
   }
 
   img {

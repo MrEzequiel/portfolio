@@ -7,7 +7,6 @@ interface NavBarContainerProps {
 export const NavBarContainer = styled.ul<NavBarContainerProps>`
   display: flex;
   gap: ${({ theme }) => theme.spaces.small_1};
-  overflow: hidden;
 
   li a {
     -webkit-tap-highlight-color: transparent;
