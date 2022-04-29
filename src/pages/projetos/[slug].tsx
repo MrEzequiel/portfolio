@@ -92,7 +92,7 @@ const Projects: NextPage<ProjectsProps> = ({ projects, projectInfo }) => {
       <ProjectWrapper>
         <ProjectContent>
           <Link href="/#projects">
-            <a>
+            <a style={{ display: 'block', width: 'fit-content' }}>
               <Button startIcon={<MdArrowBack />} variant="text" scale="small">
                 voltar
               </Button>

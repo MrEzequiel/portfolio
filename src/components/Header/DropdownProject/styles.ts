@@ -10,7 +10,7 @@ export const SelectInput = styled.div`
   background: ${props => props.theme.colorsGrey.g10};
   border-radius: ${props => props.theme.spaces.extra_small_2};
   padding: ${props => props.theme.spaces.extra_small_2};
-  width: 180px;
+  gap: ${props => props.theme.spaces.small_2};
 
   font-size: 1.6rem;
 
@@ -35,27 +35,27 @@ export const SelectProject = styled.ul`
     background: ${props => props.theme.colorsGrey.g10};
   }
 
-  transform-origin: left top;
+  transition: transform 400ms, opacity 400ms;
+  transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
 
   // enter animation
   &.animation-enter {
-    transform: scaleY(0);
+    transform: perspective(100vmax) translateZ(60px) rotateX(10deg);
+    opacity: 0;
   }
   &.animation-enter-active {
-    opacity: initial;
-    transform: scaleY(1);
-    transition: transform 400ms;
-    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    transform: perspective(100vmax) translateZ(0px) rotateX(0deg);
+    opacity: 1;
   }
 
   // exit animation
   &.animation-exit {
+    transform: perspective(100vmax) translateZ(0px) rotateX(0deg);
     opacity: 1;
   }
   &.animation-exit-active {
-    transform: scaleY(0);
-    transition: transform 400ms;
-    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    opacity: 0;
+    transform: perspective(100vmax) translateZ(-60px) rotateX(-10deg);
   }
 
   & > *:not(:last-child) {
@@ -78,6 +78,10 @@ export const SelectItem = styled.li<{ selected: boolean }>`
 
   &:hover {
     background: ${props => props.theme.colorsGrey.g10};
+  }
+
+  &:active {
+    filter: brightness(110%);
   }
 
   .icon {

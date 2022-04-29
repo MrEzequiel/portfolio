@@ -1,10 +1,19 @@
 import Image from 'next/image'
 import { useRouter } from 'next/router'
-import { FC, memo, useEffect, useState } from 'react'
+import React, {
+  CSSProperties,
+  FC,
+  memo,
+  useEffect,
+  useRef,
+  useState
+} from 'react'
 import { MdKeyboardArrowUp } from 'react-icons/md'
 import ClientOnlyPortal from '../../ClientOnlyPortal'
 import { SelectInput, SelectItem, SelectProject } from './styles'
 import { CSSTransition } from 'react-transition-group'
+import useClickOutside from '../../../hooks/useClickOutside'
+import useMediaQuery from '../../../hooks/useMediaQuery'
 
 const projects = [
   {
@@ -27,9 +36,21 @@ const projects = [
 const DropdownProject: FC = () => {
   const { query, push } = useRouter()
   const projectSlug = query.slug as string
+  const menuRef = useRef<HTMLUListElement>(null)
+  const [styles, setStyles] = useState<CSSProperties>({})
+  const isMobile = useMediaQuery('(max-width: 550px)')
 
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
   const [isOpen, setIsOpen] = useState(false)
+
+  useClickOutside(
+    isClicked => {
+      if (anchorEl) {
+        setIsOpen(false)
+      }
+    },
+    [menuRef]
+  )
 
   const [projectSelected, setProjectSelected] = useState(() => {
     const project = projects.find(({ slug }) => slug === projectSlug)
@@ -43,16 +64,36 @@ const DropdownProject: FC = () => {
     push(`/projetos/${projectSelected.slug}`)
   }, [projectSelected, query, push])
 
-  const getStyles = () => {
-    if (!anchorEl) return {}
+  useEffect(() => {
+    if (!anchorEl) {
+      setStyles({})
+      return
+    }
 
     const { top, width, height, right } = anchorEl.getBoundingClientRect()
-    return {
-      width: width + 'px',
+    setStyles({
+      minWidth: width + 'px',
       top: `${top + height + 5}px`,
       left: `${right - width}px`
+    })
+
+    const onResize = () => {
+      const { top, width, height, right, left } =
+        anchorEl.getBoundingClientRect()
+
+      setStyles({
+        minWidth: width + 'px',
+        top: `${top + height + 5}px`,
+        left: `${right - width}px`
+      })
     }
-  }
+
+    window.addEventListener('resize', onResize)
+
+    return () => {
+      window.removeEventListener('resize', onResize)
+    }
+  }, [anchorEl])
 
   return (
     <>
@@ -66,9 +107,15 @@ const DropdownProject: FC = () => {
           }
         }}
       >
-        {projectSelected.title}
+        {!isMobile && projectSelected.title}
 
-        <MdKeyboardArrowUp size={30} />
+        <MdKeyboardArrowUp
+          size={30}
+          style={{
+            transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+            transition: 'transform 0.2s ease'
+          }}
+        />
       </SelectInput>
 
       <ClientOnlyPortal selector="#select">
@@ -78,8 +125,9 @@ const DropdownProject: FC = () => {
           unmountOnExit
           classNames="animation"
           onExited={() => setAnchorEl(null)}
+          nodeRef={menuRef}
         >
-          <SelectProject style={getStyles()}>
+          <SelectProject style={styles} ref={menuRef}>
             {projects.map(project => (
               <SelectItem
                 key={project.slug}
