@@ -43,14 +43,11 @@ const DropdownProject: FC = () => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
   const [isOpen, setIsOpen] = useState(false)
 
-  useClickOutside(
-    isClicked => {
-      if (anchorEl) {
-        setIsOpen(false)
-      }
-    },
-    [menuRef]
-  )
+  useClickOutside(() => {
+    if (anchorEl) {
+      setIsOpen(false)
+    }
+  }, [menuRef])
 
   const [projectSelected, setProjectSelected] = useState(() => {
     const project = projects.find(({ slug }) => slug === projectSlug)
@@ -65,27 +62,36 @@ const DropdownProject: FC = () => {
   }, [projectSelected, query, push])
 
   useEffect(() => {
-    if (!anchorEl) {
+    if (!anchorEl || !menuRef.current) {
       setStyles({})
       return
     }
 
-    const { top, width, height, right } = anchorEl.getBoundingClientRect()
-    setStyles({
-      minWidth: width + 'px',
-      top: `${top + height + 5}px`,
-      left: `${right - width}px`
-    })
+    const getStyles = () => {
+      if (!menuRef.current) {
+        return
+      }
 
-    const onResize = () => {
-      const { top, width, height, right, left } =
-        anchorEl.getBoundingClientRect()
+      const { top, left, width, height } = anchorEl.getBoundingClientRect()
+
+      const totalWidth =
+        width > menuRef.current.offsetWidth
+          ? width - width
+          : menuRef.current.offsetWidth - width
 
       setStyles({
-        minWidth: width + 'px',
+        minWidth: width,
         top: `${top + height + 5}px`,
-        left: `${right - width}px`
+        left: `${left - totalWidth}px`
       })
+    }
+
+    getStyles()
+
+    const onResize = () => {
+      if (!menuRef.current) return
+
+      getStyles()
     }
 
     window.addEventListener('resize', onResize)

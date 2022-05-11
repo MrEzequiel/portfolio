@@ -20,10 +20,6 @@ export const SelectInput = styled.div`
 `
 
 export const SelectProject = styled.ul`
-  :global(body) {
-    overflow: hidden;
-  }
-
   position: fixed;
   z-index: 99999;
   display: flex;
