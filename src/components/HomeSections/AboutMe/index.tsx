@@ -19,14 +19,19 @@ const AboutMe: FC = () => {
 
           <TextContainer>
             <Text as="p" variant={isMobile ? 'body2' : 'body3'}>
-              Olá, sou o Ezequiel e estou ingressando no mundo da programação e
-              do design. Estou sempre querendo aprender e sem medo de perguntar
-              e errar.
+              Opa, tranquilo? 👋🏾 Sou o Ezequiel e estou ingressando no mundo da
+              programação e do design. Encontro-me sempre querendo aprender e
+              sem medo de perguntar e errar. No momento estou trabalhando como
+              estagiário Front End na @InCicle e me formando em Tecnologia em
+              Sistemas para Internet pelo IFAC.
             </Text>
 
             <Text as="p" variant={isMobile ? 'body2' : 'body3'}>
-              No momento estou produzindo conteúdo e me aperfeiçoando meus
-              conhecimento no Front End e Design.
+              Estou estudando no momento ReactJS e NextJS, todo seu ecossistema
+              e também design, mais focado no User Interface (UI). Tenho
+              experiência em ReactJS trabalhando com seus framework e
+              bibliotecas mais famosas e frequentemente faço projetos para
+              treinar o mesmo.
             </Text>
 
             <Text as="p" variant={isMobile ? 'body2' : 'body3'}>
