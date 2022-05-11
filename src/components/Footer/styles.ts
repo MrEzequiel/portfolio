@@ -3,8 +3,14 @@ import Container from '../../styles/layout/Container'
 import Section from '../../styles/layout/Section'
 
 export const FooterContainer = styled(Section)`
-  background-color: #000;
+  background-color: #000 !important;
   margin-top: auto;
+
+  overflow: initial !important;
+
+  &::after {
+    display: none;
+  }
 `
 
 export const FooterContent = styled(Container)`
@@ -17,7 +23,7 @@ export const FooterContent = styled(Container)`
   &::before {
     content: '';
     position: absolute;
-    top: -85px;
+    top: -120px;
     left: 20px;
 
     display: block;
@@ -26,6 +32,10 @@ export const FooterContent = styled(Container)`
     border-radius: 30px 0px 0px 0px;
     background: ${({ theme }) => theme.gradients.primary};
     box-shadow: ${({ theme }) => theme.shadows.large};
+
+    @media (max-width: 850px) {
+      top: -100px;
+    }
   }
 
   @media (max-width: 650px) {
@@ -33,14 +43,7 @@ export const FooterContent = styled(Container)`
     gap: ${props => props.theme.spaces.small_2};
 
     &::before {
-      width: 40px;
-      height: 40px;
-      border-radius: 20px 0px 0px 0px;
-      top: -50px;
-    }
-
-    & > p {
-      margin-top: ${props => props.theme.spaces.small_2};
+      display: none;
     }
   }
 `

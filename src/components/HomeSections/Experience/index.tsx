@@ -55,6 +55,7 @@ const Experience: FC<ExperienceProps> = ({ experiences }) => {
         paddingLeft: 0
       }}
       id="experience"
+      disableSmooth
     >
       <TitleSection alignCenter>Experiência</TitleSection>
 
