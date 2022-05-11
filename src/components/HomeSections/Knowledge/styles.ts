@@ -106,4 +106,47 @@ export const KnowledgeBody = styled.div`
   border-radius: 4px;
   padding: ${props => props.theme.spaces.small_2};
   width: 100%;
+
+  p {
+    color: ${props => props.theme.colorsGrey.g5};
+  }
+
+  &.knowledge-animation-enter .text-knowledge {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+  &.knowledge-animation-enter-active .text-knowledge {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 400ms, transform 400ms;
+  }
+  &.knowledge-animation-exit .text-knowledge {
+    opacity: 1;
+    transform: scale(1);
+  }
+  &.knowledge-animation-exit-active .text-knowledge {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 400ms, transform 400ms;
+  }
+`
+
+export const KnowledgeRelatedTopicsWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: ${props => props.theme.spaces.extra_small_2};
+  margin-top: ${props => props.theme.spaces.small_2};
+
+  .chip-topic {
+    background: ${props => props.theme.colorsPrimary.p800};
+    box-shadow: 0 0 16px -8px ${props => props.theme.colorsPrimary.p800};
+    border: 2px solid ${props => props.theme.colorsPrimary.p900};
+    border-radius: 1000px;
+    white-space: nowrap;
+    padding: ${props => props.theme.spaces.extra_small_2};
+    color: ${props => props.theme.colorsPrimary.p100};
+    font-weight: 500;
+    cursor: default;
+    line-height: 1;
+  }
 `

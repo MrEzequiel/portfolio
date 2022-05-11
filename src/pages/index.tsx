@@ -13,8 +13,15 @@ import Experience from '../components/HomeSections/Experience'
 import IExperience from '../interfaces/IExperience'
 
 export const getStaticProps: GetStaticProps = async () => {
-  const { data: knowledge } = await supabase.from('knowledge').select('*')
+  const { data: knowledge } = await supabase
+    .from('knowledge')
+    .select('*')
+    .order('id', {
+      ascending: true
+    })
+
   const { data: formations } = await supabase.from('formation').select('*')
+
   const { data: experiences } = await supabase
     .from('experiences')
     .select('*')
