@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { FC, useState } from 'react'
+import { FC, useRef, useState } from 'react'
 import { CSSTransition, SwitchTransition } from 'react-transition-group'
 import { useTheme } from 'styled-components'
 import IKnowledge from '../../../interfaces/IKnowledge'
@@ -19,6 +19,7 @@ interface KnowledgeProps {
 }
 
 const Knowledge: FC<KnowledgeProps> = ({ knowledge }) => {
+  const knowledgeBodyRef = useRef<HTMLDivElement>(null)
   const theme = useTheme()
   const [selectedKnowledge, setSelectedKnowledge] = useState<IKnowledge>(
     knowledge[0]
@@ -58,8 +59,9 @@ const Knowledge: FC<KnowledgeProps> = ({ knowledge }) => {
             key={selectedKnowledge.name}
             classNames="knowledge-animation"
             timeout={400}
+            nodeRef={knowledgeBodyRef}
           >
-            <KnowledgeBody>
+            <KnowledgeBody ref={knowledgeBodyRef}>
               <div className="text-knowledge">
                 <Text variant="heading2" as="h3">
                   {selectedKnowledge.name}

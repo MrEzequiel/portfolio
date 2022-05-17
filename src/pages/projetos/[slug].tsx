@@ -72,6 +72,9 @@ export const getStaticProps: GetStaticProps = async ctx => {
     .from('projects')
     .select('*')
     .eq('type', project.type)
+    .order('created_at', {
+      ascending: false
+    })
 
   return {
     props: {
