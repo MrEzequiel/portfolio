@@ -20,10 +20,10 @@ const AboutMe: FC = () => {
           <TextContainer>
             <Text as="p" variant={isMobile ? 'body2' : 'body3'}>
               Opa, tranquilo? 👋🏾 Sou o Ezequiel e estou ingressando no mundo da
-              programação e do design. Encontro-me sempre querendo aprender e
-              sem medo de perguntar e errar. No momento estou trabalhando como
-              estagiário Front End na @InCicle e me formando em Tecnologia em
-              Sistemas para Internet pelo IFAC.
+              programação e do design. Estou sempre querendo aprender e sem medo
+              de perguntar e errar. No momento estou trabalhando como
+              dessenvolvedor Front End Jr. na Usabit e me formando em Tecnologia
+              em Sistemas para Internet pelo IFAC.
             </Text>
 
             <Text as="p" variant={isMobile ? 'body2' : 'body3'}>
