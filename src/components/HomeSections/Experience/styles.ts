@@ -101,7 +101,6 @@ export const ExperienceItem = styled.li`
       width: 28px;
       height: 28px;
       border-radius: 50%;
-      border: 2px solid ${props => props.theme.colorsPrimary.p700};
       overflow: hidden;
     }
   }

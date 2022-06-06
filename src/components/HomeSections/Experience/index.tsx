@@ -69,8 +69,10 @@ const Experience: FC<ExperienceProps> = ({ experiences }) => {
                     src={experience.logo_company}
                     alt={experience.company}
                     layout="fill"
+                    objectFit="cover"
                     placeholder="blur"
                     blurDataURL={SkeletonPlaceholder()}
+                    quality={100}
                   />
                 </div>
                 <Text as="h4" variant="heading1" style={{ fontWeight: 400 }}>
