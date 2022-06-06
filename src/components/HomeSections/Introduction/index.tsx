@@ -78,7 +78,7 @@ const Introduction: FC = () => {
               scale="medium"
               style={{ marginTop: theme.spaces.small_1 }}
             >
-              <a href="/curriculo-ezequiel.pdf" download>
+              <a href="/Ezequiel FrontEnd CV.pdf" download>
                 Currículo
               </a>
             </Button>
