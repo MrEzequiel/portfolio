@@ -1,3 +1,4 @@
+import { Fragment } from 'react'
 import Document, {
   Html,
   Main,
@@ -5,8 +6,9 @@ import Document, {
   Head,
   DocumentContext
 } from 'next/document'
-import { Fragment } from 'react'
+
 import { ServerStyleSheet } from 'styled-components'
+import AnalyticsWrapper from '../components/Analytics'
 
 export default class MyDocument extends Document {
   render() {
@@ -72,6 +74,7 @@ export default class MyDocument extends Document {
           <Main />
           <div id="select" />
           <NextScript />
+          <AnalyticsWrapper />
         </body>
       </Html>
     )
