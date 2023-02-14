@@ -69,7 +69,7 @@ const Introduction: FC = () => {
             <Text variant="body3" style={{ color: theme.colorsGrey.g4 }}>
               Me chamo Ezequiel Soares, estou atuando na área de Front End,
               especialmente no ecossistema JavaScript, como ReactJS,
-              styled-components, TypeScript, NextJS, React Native e muito mais!
+              styled-components, TypeScript, NextJS, React Native.
             </Text>
 
             <Button
