@@ -8,7 +8,6 @@ import Document, {
 } from 'next/document'
 
 import { ServerStyleSheet } from 'styled-components'
-import AnalyticsWrapper from '../components/Analytics'
 
 export default class MyDocument extends Document {
   render() {
@@ -74,7 +73,6 @@ export default class MyDocument extends Document {
           <Main />
           <div id="select" />
           <NextScript />
-          <AnalyticsWrapper />
         </body>
       </Html>
     )
