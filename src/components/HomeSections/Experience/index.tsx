@@ -1,20 +1,24 @@
+import { FC } from 'react'
 import Image from 'next/image'
-import { FC, useMemo } from 'react'
-import IExperience from '../../../interfaces/IExperience'
-import Section from '../../../styles/layout/Section'
-import Text from '../../../styles/layout/Text'
-import TitleSection from '../../TitleSection'
-import { ExperienceContainer, ExperienceItem, ExperienceList } from './styles'
-import {
-  differenceInDays,
-  differenceInMonths,
-  differenceInYears,
-  format
-} from 'date-fns'
-import { ptBR } from 'date-fns/locale'
+
 import { useTheme } from 'styled-components'
 import useMediaQuery from '../../../hooks/useMediaQuery'
+
+import TitleSection from '../../TitleSection'
+import Text from '../../../styles/layout/Text'
+import Section from '../../../styles/layout/Section'
+import { Chip } from '../../../styles/layout/Chip'
+import { ExperienceContainer, ExperienceItem, ExperienceList } from './styles'
+
+import IExperience from '../../../interfaces/IExperience'
 import SkeletonPlaceholder from '../../../utils/SkeletonPlaceholder'
+import {
+  differenceInDays,
+  format,
+  differenceInCalendarYears,
+  differenceInCalendarMonths
+} from 'date-fns'
+import { ptBR } from 'date-fns/locale'
 
 interface ExperienceProps {
   experiences: IExperience[]
@@ -33,12 +37,12 @@ const Experience: FC<ExperienceProps> = ({ experiences }) => {
     const endDate = end ? new Date(end) : new Date()
 
     if (endDate.getFullYear() - startDate.getFullYear() > 0) {
-      const years = differenceInYears(endDate, startDate)
+      const years = differenceInCalendarYears(endDate, startDate)
       return `${years} ano${years > 1 ? 's' : ''}`
     }
 
     if (endDate.getMonth() - startDate.getMonth() > 0) {
-      const months = differenceInMonths(endDate, startDate)
+      const months = differenceInCalendarMonths(endDate, startDate)
       return `${months} ${months > 1 ? 'meses' : 'mês'}`
     }
 
@@ -110,9 +114,9 @@ const Experience: FC<ExperienceProps> = ({ experiences }) => {
 
               <div className="experience-techs">
                 {experience.techs.map(tech => (
-                  <Text as="span" variant="body3" key={tech}>
+                  <Chip variant="body3" key={tech}>
                     {tech}
-                  </Text>
+                  </Chip>
                 ))}
               </div>
             </ExperienceItem>

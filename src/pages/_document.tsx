@@ -59,7 +59,6 @@ export default class MyDocument extends Document {
           />
           <meta name="twitter:card" content="summary" />
           <meta name="twitter:image" content="/cover-img.png" />
-          <meta name="twitter:creator" content="@ezequield3v" />
 
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />

@@ -22,7 +22,6 @@
 ## 👨‍💻 Desenvolvedor
 
 - Github: <a href="https://github.com/MrEzequiel">MrEzequiel</a>
-- Instagram: <a href="https://www.instagram.com/ezequield3v/">@ezequield3v</a>
 - Linkedin: <a href="https://www.linkedin.com/in/ezequiel-soares-da-silva-b64a64207">Ezequiel Soares</a>
 
 <h3 align="center">Feito com ♥ por Ezequiel</h3>

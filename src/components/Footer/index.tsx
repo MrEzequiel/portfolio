@@ -1,14 +1,15 @@
 import { FC } from 'react'
-import { MdEmail, MdPhone } from 'react-icons/md'
-import { AiFillInstagram, AiFillLinkedin, AiFillGithub } from 'react-icons/ai'
 import { useTheme } from 'styled-components'
-import Text from '../../styles/layout/Text'
+
+import { MdEmail, MdPhone } from 'react-icons/md'
+import { AiFillLinkedin, AiFillGithub } from 'react-icons/ai'
 import {
   FooterContainer,
   FooterContent,
   FooterLink,
   FooterLinksList
 } from './styles'
+import Text from '../../styles/layout/Text'
 
 const Footer: FC = () => {
   const theme = useTheme()
@@ -61,18 +62,6 @@ const Footer: FC = () => {
             <MdPhone size={24} />
             <Text as="a" variant="heading1" href="tel:+5568996021953">
               +55 68 996021953
-            </Text>
-          </FooterLink>
-
-          <FooterLink>
-            <AiFillInstagram size={24} />
-            <Text
-              as="a"
-              variant="heading1"
-              href="https://www.instagram.com/ezequield3v/"
-              target="_blank"
-            >
-              @ezequield3v
             </Text>
           </FooterLink>
         </FooterLinksList>

@@ -10,7 +10,6 @@
     "analyze": "cross-env ANALYZE=true next build"
   },
   "dependencies": {
-    "@next/bundle-analyzer": "^12.1.5",
     "@supabase/supabase-js": "^1.33.3",
     "cross-env": "^7.0.3",
     "date-fns": "^2.28.0",

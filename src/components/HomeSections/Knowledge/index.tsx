@@ -1,11 +1,12 @@
-import Image from 'next/image'
 import { FC, useRef, useState } from 'react'
-import { CSSTransition, SwitchTransition } from 'react-transition-group'
 import { useTheme } from 'styled-components'
-import IKnowledge from '../../../interfaces/IKnowledge'
+import Image from 'next/image'
+
+import { CSSTransition, SwitchTransition } from 'react-transition-group'
+
+import { Chip } from '../../../styles/layout/Chip'
 import Section from '../../../styles/layout/Section'
 import Text from '../../../styles/layout/Text'
-import TitleSection from '../../TitleSection'
 import {
   KnowledgeBody,
   KnowledgeContent,
@@ -13,6 +14,9 @@ import {
   KnowledgeList,
   KnowledgeRelatedTopicsWrapper
 } from './styles'
+
+import TitleSection from '../../TitleSection'
+import IKnowledge from '../../../interfaces/IKnowledge'
 
 interface KnowledgeProps {
   knowledge: IKnowledge[]
@@ -70,16 +74,19 @@ const Knowledge: FC<KnowledgeProps> = ({ knowledge }) => {
                 <Text
                   variant="body3"
                   as="p"
-                  style={{ marginTop: theme.spaces.extra_small_2 }}
+                  style={{
+                    marginTop: theme.spaces.extra_small_2,
+                    color: theme.colorsGrey.g5
+                  }}
                 >
                   {selectedKnowledge.description}
                 </Text>
 
                 <KnowledgeRelatedTopicsWrapper>
                   {selectedKnowledge.related_topics.map(relatedTopic => (
-                    <span className="chip-topic" key={relatedTopic}>
+                    <Chip key={relatedTopic} variant="body3">
                       {relatedTopic}
-                    </span>
+                    </Chip>
                   ))}
                 </KnowledgeRelatedTopicsWrapper>
               </div>
