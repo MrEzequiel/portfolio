@@ -1,8 +1,8 @@
 # portfolio
 
-👨🏾‍💻 Meu portifolio para divulgação do meu trabalho como Front End Developer e entusiasta UX/UI designer.
+👨🏾‍💻 Meu portifolio para divulgação do meu trabalho como Front End Developer especialista React.
 
-![imagem portfolio](https://user-images.githubusercontent.com/85039218/167931811-23a72f74-b54a-4c9f-8336-79aaf9f0ef7d.png)
+![imagem portfolio](https://github.com/MrEzequiel/portfolio/assets/85039218/2e03e467-c022-4e5e-9e3b-198ad3702280)
 
 ## 🛠️ Feito com:
 
