@@ -1,24 +1,20 @@
-import Image from 'next/image'
 import { FC } from 'react'
+import { useTheme } from 'styled-components'
+
+import * as S from './styles'
+import Text from '../../../styles/layout/Text'
 import Section from '../../../styles/layout/Section'
+import Image from 'next/image'
+import Button from '../../../styles/layout/Button'
+
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
 import { MdArrowDropDown, MdTextSnippet } from 'react-icons/md'
-import {
-  IntroductionImage,
-  IntroductionText,
-  IntroductionWrapper,
-  IntruductionBackground,
-  ScrollIndicator
-} from './styles'
-import Text from '../../../styles/layout/Text'
-import { useTheme } from 'styled-components'
-import Button from '../../../styles/layout/Button'
 
 const Introduction: FC = () => {
   const theme = useTheme()
 
   return (
-    <IntruductionBackground>
+    <S.IntruductionBackground>
       <Section
         isBlack
         patternPositionX="left"
@@ -30,8 +26,8 @@ const Introduction: FC = () => {
           padding: `${theme.spaces.medium_1} 0 !important`
         }}
       >
-        <IntroductionWrapper>
-          <IntroductionImage>
+        <S.IntroductionWrapper>
+          <S.IntroductionImage>
             <div className="social-links">
               <a
                 href="https://github.com/MrEzequiel"
@@ -59,39 +55,47 @@ const Introduction: FC = () => {
                 objectFit="contain"
               />
             </div>
-          </IntroductionImage>
+          </S.IntroductionImage>
 
-          <IntroductionText>
+          <S.IntroductionText>
             <Text as="h2" italic variant="heading1">
               Desenvolvedor Front End<span>.</span>
             </Text>
 
             <Text variant="body3" style={{ color: theme.colorsGrey.g4 }}>
               Me chamo Ezequiel Soares, estou atuando na área de Front End,
-              especialmente no ecossistema JavaScript, como ReactJS,
-              styled-components, TypeScript, NextJS, React Native.
+              especializado no ecossistema{' '}
+              <S.StrongText as="strong">React</S.StrongText>. Tenho uma paixão
+              profunda por criar produtos orientados para o usuário, colaborando
+              com equipes focadas em soluções, e utilizando{' '}
+              <S.StrongText as="strong">métricas e testes</S.StrongText> para
+              garantir a qualidade e eficiência no desenvolvimento.
             </Text>
 
-            <Button
-              startIcon={<MdTextSnippet />}
-              variant="contained"
-              scale="medium"
-              style={{ marginTop: theme.spaces.small_1 }}
+            <S.LinkCurriculum
+              href="https://docs.google.com/document/d/1vunO8uL4iUWRj02AmcJHR3-1D_yTWLFlTVY-VRL0uTs/edit"
+              target="_blank"
+              rel="noreferrer"
             >
-              <a href="/Ezequiel FrontEnd CV.pdf" download>
+              <Button
+                startIcon={<MdTextSnippet />}
+                variant="contained"
+                scale="medium"
+                style={{ marginTop: theme.spaces.small_1 }}
+              >
                 Currículo
-              </a>
-            </Button>
-          </IntroductionText>
-        </IntroductionWrapper>
+              </Button>
+            </S.LinkCurriculum>
+          </S.IntroductionText>
+        </S.IntroductionWrapper>
 
-        <ScrollIndicator>
+        <S.ScrollIndicator>
           <a href="#about-me">
             <MdArrowDropDown size={40} color={theme.colorsPrimary.p200} />
           </a>
-        </ScrollIndicator>
+        </S.ScrollIndicator>
       </Section>
-    </IntruductionBackground>
+    </S.IntruductionBackground>
   )
 }
 

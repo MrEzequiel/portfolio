@@ -47,7 +47,7 @@ const getLineHeight = (variant: TextProps['variant']) => {
     case 'body2':
       return '1.96rem'
     case 'body3':
-      return '2.24rem'
+      return '2.26rem'
 
     default:
       return '1.2'

@@ -26,7 +26,7 @@ export default class MyDocument extends Document {
           />
           <meta
             name="description"
-            content="Portfolio de Ezequiel Soares, desenvolvedor Front End e entusiasta UX/UI designer."
+            content="Portfolio de Ezequiel Soares, desenvolvedor Front End especialista React."
           />
           <meta name="author" content="Ezequiel Soares" />
           <meta name="robots" content="index" />
@@ -36,15 +36,12 @@ export default class MyDocument extends Document {
           />
           <meta
             property="og:description"
-            content="Portfolio de Ezequiel Soares, desenvolvedor Front End e entusiasta UX/UI designer."
+            content="Portfolio de Ezequiel Soares, desenvolvedor Front End especialista React."
           />
-          <meta
-            property="og:url"
-            content="https://portfolio-mrezequiel.vercel.app/"
-          />
+          <meta property="og:url" content="https://www.mrezequiel.com/" />
           <meta property="og:site_name" content="Portfolio" />
           <meta property="og:type" content="website" />
-          <meta property="og:image" content="/cover-img.png" />
+          <meta property="og:image" content="/cover.jpg" />
 
           <meta
             name="twitter:title"
@@ -54,12 +51,9 @@ export default class MyDocument extends Document {
             name="twitter:description"
             content="Portfolio de Ezequiel Soares, desenvolvedor Front End e entusiasta UX/UI designer."
           />
-          <meta
-            name="twitter:url"
-            content="https://portfolio-mrezequiel.vercel.app/"
-          />
+          <meta name="twitter:url" content="https://www.mrezequiel.com/" />
           <meta name="twitter:card" content="summary" />
-          <meta name="twitter:image" content="/cover-img.png" />
+          <meta name="twitter:image" content="/cover.jpg" />
 
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />

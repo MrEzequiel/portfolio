@@ -1,11 +1,11 @@
 # portfolio
+
 👨🏾‍💻 Meu portifolio para divulgação do meu trabalho como Front End Developer e entusiasta UX/UI designer.
 
-
-![imagem portifolio](https://user-images.githubusercontent.com/85039218/167931811-23a72f74-b54a-4c9f-8336-79aaf9f0ef7d.png)
-
+![imagem portfolio](https://user-images.githubusercontent.com/85039218/167931811-23a72f74-b54a-4c9f-8336-79aaf9f0ef7d.png)
 
 ## 🛠️ Feito com:
+
 - NextJS
 - ReactJS
 - TypeScript

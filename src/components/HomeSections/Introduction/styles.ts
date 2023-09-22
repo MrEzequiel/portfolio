@@ -1,9 +1,10 @@
 import styled from 'styled-components'
 import Container from '../../../styles/layout/Container'
+import Text from '../../../styles/layout/Text'
 
 export const IntroductionWrapper = styled(Container)`
   display: grid;
-  height: calc(80vh - 80px);
+  height: calc(90vh - 80px);
   align-items: center;
 
   grid-template-columns: 2fr 3fr;
@@ -175,4 +176,17 @@ export const ScrollIndicator = styled.div`
 
     animation: bounce 2.8s ease infinite;
   }
+`
+
+export const StrongText = styled(Text)`
+  color: ${props => props.theme.colorsPrimary.p1000};
+  font-weight: 700;
+`
+StrongText.defaultProps = {
+  variant: 'body3'
+}
+
+export const LinkCurriculum = styled.a`
+  display: block;
+  width: fit-content;
 `
