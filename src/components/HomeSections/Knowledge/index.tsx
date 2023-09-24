@@ -10,6 +10,7 @@ import TitleSection from '../../TitleSection'
 import IKnowledge from '../../../interfaces/IKnowledge'
 import Container from '../../../styles/layout/Container'
 import useMediaQuery from '../../../hooks/useMediaQuery'
+import Tilt from 'react-next-tilt'
 
 interface KnowledgeProps {
   knowledge: IKnowledge[]
@@ -43,24 +44,22 @@ const Knowledge: FC<KnowledgeProps> = ({ knowledge }) => {
 
         <KnowledgeList>
           {knowledge.map(knowledgeItem => (
-            <KnowledgeItem
-              key={knowledgeItem.id}
-              data-tilt
-              data-tilt-scale="1.1"
-            >
-              <div className="icon-container">
-                <Image
-                  src={knowledgeItem.icon}
-                  alt={knowledgeItem.name}
-                  layout="fill"
-                  objectFit="contain"
-                  draggable={false}
-                />
-              </div>
-              <Text as="p" variant={isMobile ? 'body2' : 'body3'}>
-                {knowledgeItem.name}
-              </Text>
-            </KnowledgeItem>
+            <Tilt key={knowledgeItem.id}>
+              <KnowledgeItem>
+                <div className="icon-container">
+                  <Image
+                    src={knowledgeItem.icon}
+                    alt={knowledgeItem.name}
+                    layout="fill"
+                    objectFit="contain"
+                    draggable={false}
+                  />
+                </div>
+                <Text as="p" variant={isMobile ? 'body2' : 'body3'}>
+                  {knowledgeItem.name}
+                </Text>
+              </KnowledgeItem>
+            </Tilt>
           ))}
         </KnowledgeList>
       </Container>

@@ -10,6 +10,8 @@ export const KnowledgeList = styled.ul`
 export const KnowledgeItem = styled.li`
   transform-style: preserve-3d;
   transform: perspective(1000px);
+
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
