@@ -13,7 +13,7 @@ const TitleSection: FC<PropsWithChildren<TextProps>> = ({
     <Text
       as="h2"
       variant={
-        (isMobile && 'heading3') || (isTablet && 'heading4') || 'heading5'
+        (isMobile && 'heading2') || (isTablet && 'heading4') || 'heading5'
       }
       italic
       divider

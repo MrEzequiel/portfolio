@@ -1,135 +1,39 @@
 import styled, { css } from 'styled-components'
 
-export const KnowledgeContent = styled.div`
-  margin-top: ${props => props.theme.spaces.small_3};
-
-  width: min-content;
-  margin-left: auto;
-  margin-right: auto;
-
-  @media (max-width: 700px) {
-    display: flex;
-    width: fit-content;
-  }
-`
-
 export const KnowledgeList = styled.ul`
-  display: flex;
-
-  @media (max-width: 700px) {
-    flex-direction: column;
-  }
+  display: grid;
+  margin-top: ${props => props.theme.spaces.medium_1};
+  gap: ${props => props.theme.spaces.small_3};
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
 `
 
-interface KnowledgeItemProps {
-  isSelected: boolean
-}
-
-export const KnowledgeItem = styled.li<KnowledgeItemProps>`
-  cursor: pointer;
-
+export const KnowledgeItem = styled.li`
+  transform-style: preserve-3d;
+  transform: perspective(1000px);
   display: flex;
-  -webkit-tap-highlight-color: transparent;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  width: 75px;
-  height: 75px;
+  justify-content: center;
+  gap: ${props => props.theme.spaces.extra_small_2};
+  -webkit-tap-highlight-color: transparent;
 
-  background: ${props => props.theme.colorsGrey.g10};
-  transition: 750ms ease;
-  transition-property: background box-shadow;
+  padding: ${({ theme }) => `${theme.spaces.small_2} ${theme.spaces.small_1}`};
+  background: ${props => props.theme.colorsGrey.g11};
+  border-radius: ${props => props.theme.spaces.extra_small_1};
+  border: 1px solid transparent;
 
   &:hover {
-    background: ${props => props.theme.colorsGrey.g9};
-
-    .icon-container {
-      opacity: 1;
-    }
-  }
-
-  &:first-child {
-    border-radius: 4px 0px 0px 0px;
-  }
-
-  &:last-child {
-    border-radius: 0px 4px 0px 0px;
+    border-color: ${props => props.theme.colorsPrimary.p900};
   }
 
   .icon-container {
+    transform: translateZ(30px);
     position: relative;
-    width: 30px;
-    height: 30px;
-    opacity: 0.5;
-    transition: opacity 750ms ease;
+    width: 42px;
+    height: 42px;
   }
 
-  ${props =>
-    props.isSelected &&
-    css`
-      transition-property: background border-radius box-shadow border transform;
-
-      cursor: default;
-
-      transform: translateY(4px);
-      position: relative;
-      z-index: 1;
-
-      background: ${props => props.theme.colorsGrey.g10} !important;
-      box-shadow: 0 -8px 8px 0px rgba(0, 0, 0, 0.1);
-      border-radius: 30px 4px 0px 0px !important;
-      border: 5px solid ${props => props.theme.colorsPrimary.p800};
-      border-bottom: none;
-      box-sizing: border-box;
-
-      .icon-container {
-        opacity: 1;
-      }
-
-      @media (max-width: 700px) {
-        border-radius: 5px 0 0 30px !important;
-        box-shadow: -8px 0px 8px 0px rgba(0, 0, 0, 0.1);
-        transform: translateX(5px);
-        border-bottom: 5px solid ${props => props.theme.colorsPrimary.p800};
-        border-right: none;
-      }
-    `}
-`
-
-export const KnowledgeBody = styled.div`
-  position: relative;
-  top: -1px;
-
-  background: ${props => props.theme.colorsGrey.g10};
-  /* color-primary */
-
-  border: 5px solid ${props => props.theme.colorsPrimary.p800};
-  border-radius: 4px;
-  padding: ${props => props.theme.spaces.small_2};
-  width: 100%;
-
-  &.knowledge-animation-enter .text-knowledge {
-    opacity: 0;
-    transform: scale(1.05);
+  p {
+    text-align: center;
   }
-  &.knowledge-animation-enter-active .text-knowledge {
-    opacity: 1;
-    transform: scale(1);
-    transition: opacity 400ms, transform 400ms;
-  }
-  &.knowledge-animation-exit .text-knowledge {
-    opacity: 1;
-    transform: scale(1);
-  }
-  &.knowledge-animation-exit-active .text-knowledge {
-    opacity: 0;
-    transform: scale(0.95);
-    transition: opacity 400ms, transform 400ms;
-  }
-`
-
-export const KnowledgeRelatedTopicsWrapper = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  gap: ${props => props.theme.spaces.extra_small_2};
-  margin-top: ${props => props.theme.spaces.small_2};
 `

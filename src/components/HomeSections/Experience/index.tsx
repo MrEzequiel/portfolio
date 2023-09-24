@@ -52,6 +52,7 @@ const Experience: FC<ExperienceProps> = ({ experiences }) => {
 
   return (
     <Section
+      isBlack
       disablePattern
       style={{
         backgroundImage: "url('/pattern-experience.svg')",

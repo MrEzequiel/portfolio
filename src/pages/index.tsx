@@ -50,7 +50,6 @@ const Home: NextPage<HomeProps> = ({ knowledge, formations, experiences }) => {
     <>
       <Introduction />
       <AboutMe />
-      <Projects />
       <Knowledge knowledge={knowledge} />
       <Formation formations={formations} />
       <Experience experiences={experiences} />

@@ -12,6 +12,7 @@ import GlobalStyles from '../styles/GlobalStyles'
 import main from '../styles/theme/main'
 
 import NProgress from 'nprogress'
+import 'tilt.js'
 
 Router.events.on('routeChangeStart', () => {
   NProgress.start()
