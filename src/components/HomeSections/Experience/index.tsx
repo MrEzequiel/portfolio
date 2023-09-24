@@ -8,7 +8,13 @@ import TitleSection from '../../TitleSection'
 import Text from '../../../styles/layout/Text'
 import Section from '../../../styles/layout/Section'
 import { Chip } from '../../../styles/layout/Chip'
-import { ExperienceContainer, ExperienceItem, ExperienceList } from './styles'
+import {
+  ExperienceContainer,
+  ExperienceItem,
+  ExperienceList,
+  FooterExperience,
+  TechsList
+} from './styles'
 
 import IExperience from '../../../interfaces/IExperience'
 import SkeletonPlaceholder from '../../../utils/SkeletonPlaceholder'
@@ -38,6 +44,13 @@ const Experience: FC<ExperienceProps> = ({ experiences }) => {
 
     if (endDate.getFullYear() - startDate.getFullYear() > 0) {
       const years = differenceInCalendarYears(endDate, startDate)
+      startDate.setFullYear(endDate.getFullYear())
+      const months = differenceInCalendarMonths(endDate, startDate)
+      if (months > 0) {
+        return `${years} ${years > 1 ? 'anos' : 'ano'} e ${months} ${
+          months > 1 ? 'meses' : 'mês'
+        }`
+      }
       return `${years} ano${years > 1 ? 's' : ''}`
     }
 
@@ -50,9 +63,18 @@ const Experience: FC<ExperienceProps> = ({ experiences }) => {
     return `${days} dia${days > 1 ? 's' : ''}`
   }
 
+  const getDateExperience = (dateStart: string, dateEnd?: string) => {
+    const startDate = formateDate(dateStart)
+    const endDate = dateEnd ? formateDate(dateEnd) : 'Presente'
+
+    return `${startDate} - ${endDate} (${getExperienceDuration(
+      dateStart,
+      dateEnd
+    )})`
+  }
+
   return (
     <Section
-      isBlack
       disablePattern
       style={{
         backgroundImage: "url('/pattern-experience.svg')",
@@ -60,66 +82,65 @@ const Experience: FC<ExperienceProps> = ({ experiences }) => {
         paddingLeft: 0
       }}
       id="experience"
-      disableSmooth
     >
       <TitleSection alignCenter>Experiência</TitleSection>
 
       <ExperienceContainer>
         <ExperienceList>
           {experiences.map(experience => (
-            <ExperienceItem key={experience.id} id="experience-item">
+            <ExperienceItem key={experience.id}>
               <div className="experience-header">
                 <div className="company-logo">
                   <Image
                     src={experience.logo_company}
-                    alt={experience.company}
+                    alt={experience.title}
                     layout="fill"
                     objectFit="cover"
-                    placeholder="blur"
-                    blurDataURL={SkeletonPlaceholder()}
-                    quality={100}
                   />
                 </div>
-                <Text as="h4" variant="heading1" style={{ fontWeight: 400 }}>
-                  {experience.title}
-                </Text>
-              </div>
-
-              <div className="experience-info">
-                <Text as="p" variant="body3">
-                  {experience.company}
-                </Text>
-
-                <Text
-                  as="p"
-                  variant="body3"
-                  style={{ color: theme.colorsGrey.g2 }}
-                >
-                  {formateDate(experience.date_start)} -{' '}
-                  {experience.date_end
-                    ? formateDate(experience.date_end)
-                    : 'Até o momento'}{' '}
+                <div className="text">
                   <Text
-                    as={!isMobile ? 'span' : 'p'}
-                    variant="body3"
-                    style={{ color: theme.colorsGrey.g6 }}
+                    as="h3"
+                    variant={isMobile ? 'heading1' : 'heading2'}
+                    style={{ color: theme.colorsPrimary.p1400 }}
                   >
-                    {!isMobile && '🞄 '}
-                    {getExperienceDuration(
-                      experience.date_start,
-                      experience.date_end
-                    )}
+                    {experience.title}
                   </Text>
-                </Text>
+                  <Text as="p" variant="body3">
+                    {experience.company} ·{' '}
+                    <Text
+                      as="span"
+                      variant="body3"
+                      style={{ color: theme.colorsGrey.g6 }}
+                    >
+                      {getDateExperience(
+                        experience.date_start,
+                        experience.date_end
+                      )}
+                    </Text>
+                  </Text>
+                </div>
               </div>
 
-              <div className="experience-techs">
-                {experience.techs.map(tech => (
-                  <Chip variant="body3" key={tech}>
-                    {tech}
-                  </Chip>
-                ))}
-              </div>
+              <Text as="p" variant="body3" id="experience-description">
+                {experience.description}
+              </Text>
+
+              <FooterExperience>
+                <TechsList>
+                  <Text
+                    as="span"
+                    variant="body3"
+                    style={{ fontWeight: 700 }}
+                    id="experience-techs"
+                  >
+                    Tecnologias:
+                  </Text>
+                  {experience.techs.map(tech => (
+                    <Chip key={tech}>{tech}</Chip>
+                  ))}
+                </TechsList>
+              </FooterExperience>
             </ExperienceItem>
           ))}
         </ExperienceList>

@@ -44,7 +44,7 @@ const Knowledge: FC<KnowledgeProps> = ({ knowledge }) => {
 
         <KnowledgeList>
           {knowledge.map(knowledgeItem => (
-            <Tilt key={knowledgeItem.id}>
+            <Tilt key={knowledgeItem.id} disableScrollOnTouch={false}>
               <KnowledgeItem>
                 <div className="icon-container">
                   <Image

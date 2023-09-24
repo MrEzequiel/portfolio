@@ -14,7 +14,13 @@ const Formation: FC<FormationProps> = ({ formations }) => {
   const theme = useTheme()
 
   return (
-    <Section patternPositionX="left" patternPositionY="bottom" id="formation">
+    <Section
+      isBlack
+      disableSmooth
+      patternPositionX="left"
+      patternPositionY="bottom"
+      id="formation"
+    >
       <FormationContainer>
         <div className="text">
           <TitleSection>Formação</TitleSection>

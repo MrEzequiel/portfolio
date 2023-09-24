@@ -6,6 +6,7 @@ interface IExperience {
   date_end?: string
   techs: string[]
   company: string
+  description: string
 }
 
 export default IExperience
