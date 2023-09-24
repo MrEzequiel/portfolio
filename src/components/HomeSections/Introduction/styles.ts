@@ -145,7 +145,8 @@ export const IntroductionText = styled.div`
       line-height: 3.8rem;
     }
 
-    p {
+    p,
+    strong {
       font-size: 1.2rem;
       line-height: 1.5;
     }
