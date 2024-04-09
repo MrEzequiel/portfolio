@@ -5,7 +5,13 @@ const nextConfig = {
     styledComponents: true
   },
   images: {
-    domains: ['prdytupmauayigpsaeeb.supabase.co']
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'prdytupmauayigpsaeeb.supabase.co',
+        port: ''
+      }
+    ]
   }
 }
 
