@@ -46,8 +46,8 @@ const AboutMe: FC = () => {
         <div className="ilustration-container">
           <Image
             src="/ilustration-about.svg"
-            layout="fill"
             alt="ilustração sobre mim"
+            fill
             priority
           />
         </div>

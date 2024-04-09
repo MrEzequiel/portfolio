@@ -93,10 +93,9 @@ const Experience: FC<ExperienceProps> = ({ experiences }) => {
               <div className="experience-header">
                 <div className="company-logo">
                   <Image
+                    fill
                     src={experience.logo_company}
                     alt={experience.title}
-                    layout="fill"
-                    objectFit="cover"
                   />
                 </div>
                 <div className="text">

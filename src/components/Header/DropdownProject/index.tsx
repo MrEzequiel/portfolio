@@ -145,12 +145,7 @@ const DropdownProject: FC = () => {
               >
                 {project.title}
                 <div className="icon">
-                  <Image
-                    src={project.icon}
-                    alt={project.title}
-                    layout="fill"
-                    objectFit="contain"
-                  />
+                  <Image src={project.icon} alt={project.title} fill />
                 </div>
               </SelectItem>
             ))}

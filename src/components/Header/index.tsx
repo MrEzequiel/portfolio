@@ -28,7 +28,7 @@ const Header: FC = () => {
   return (
     <HeaderWrapper isSticky={isSticky}>
       <HeaderInner>
-        <Link href="/" passHref>
+        <Link href="/" legacyBehavior>
           <Text as="h1" italic variant="heading1" style={{ cursor: 'pointer' }}>
             Ezequiel Soares
           </Text>

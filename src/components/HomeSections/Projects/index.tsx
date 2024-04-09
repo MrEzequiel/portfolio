@@ -52,14 +52,14 @@ const Projects: FC = () => {
               href={`/projetos/${project.slug}`}
               key={project.title}
               passHref
+              legacyBehavior
             >
               <ProjectItem>
                 <div className="icon-wrapper">
                   <Image
+                    fill
                     src={project.image}
                     alt={project.title}
-                    layout="fill"
-                    objectFit="contain"
                   />
                 </div>
                 <Text
@@ -91,7 +91,7 @@ const Projects: FC = () => {
         </ProjectList>
       </Container>
 
-      <Link href="/projetos/meus-projetos">
+      <Link href="/projetos/meus-projetos" legacyBehavior>
         <a
           style={{
             display: 'block',

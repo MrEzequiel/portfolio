@@ -48,10 +48,9 @@ const Knowledge: FC<KnowledgeProps> = ({ knowledge }) => {
               <KnowledgeItem>
                 <div className="icon-container">
                   <Image
+                    fill
                     src={knowledgeItem.icon}
                     alt={knowledgeItem.name}
-                    layout="fill"
-                    objectFit="contain"
                     draggable={false}
                   />
                 </div>

@@ -48,11 +48,11 @@ const Introduction: FC = () => {
 
             <div className="image-wrapper">
               <Image
+                fill
+                priority
+                style={{ objectFit: 'contain' }}
                 src="/me.png"
                 alt="foto de ezequiel soares"
-                layout="fill"
-                priority
-                objectFit="contain"
               />
             </div>
           </S.IntroductionImage>

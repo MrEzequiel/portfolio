@@ -95,7 +95,7 @@ const Projects: NextPage<ProjectsProps> = ({ projects, projectInfo }) => {
     <>
       <ProjectWrapper>
         <ProjectContent>
-          <Link href="/#projects">
+          <Link href="/#experience" legacyBehavior>
             <a style={{ display: 'block', width: 'fit-content' }}>
               <Button startIcon={<MdArrowBack />} variant="text" scale="small">
                 voltar
@@ -117,12 +117,11 @@ const Projects: NextPage<ProjectsProps> = ({ projects, projectInfo }) => {
               <div className="image-cover">
                 {project.image ? (
                   <Image
+                    fill
+                    style={{ objectFit: 'cover', objectPosition: 'top' }}
                     src={project.image}
                     alt={project.title}
-                    layout="fill"
-                    objectFit="cover"
-                    objectPosition="top"
-                    quality={90}
+                    quality={60}
                     placeholder="blur"
                     blurDataURL={SkeletonPlaceholder()}
                     typeof="gif"
