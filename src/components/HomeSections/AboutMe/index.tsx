@@ -26,19 +26,7 @@ const AboutMe: FC = () => {
             </Text>
 
             <Text as="p" variant={isMobile ? 'body2' : 'body3'}>
-              Hoje com mais de{' '}
-              <strong>2 anos de experiência profissional</strong>, tive a
-              oportunidade de trabalhar em projetos incríveis e desenvolver
-              habilidades em tecnologias como{' '}
-              <Text
-                as="strong"
-                variant={isMobile ? 'body2' : 'body3'}
-                style={{ fontWeight: 600 }}
-              >
-                HTML, CSS, JavaScript, React, Typescript, Next, etc
-              </Text>
-              . Além disso, também estou sempre em busca de manter-me atualizado
-              com as últimas tendências e tecnologias da área.
+              Hoje com{' '} <strong>3 anos de experiência profissional</strong>, tive a oportunidade de trabalhar em projetos desafiadores e com diferente responsabilidades e escopos. Minha paixão é pelo desenvolvimento Web orientado a testes com bastante foco na boa experiência de usuário. Além disso, também estou sempre em busca de manter-me atualizado com as últimas tendências e tecnologias da área.
             </Text>
           </TextContainer>
         </div>
