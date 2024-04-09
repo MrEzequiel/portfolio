@@ -57,13 +57,6 @@ const Footer: FC = () => {
               Ezequiel Soares
             </Text>
           </FooterLink>
-
-          <FooterLink>
-            <MdPhone size={24} />
-            <Text as="a" variant="heading1" href="tel:+5568996021953">
-              +55 68 996021953
-            </Text>
-          </FooterLink>
         </FooterLinksList>
       </FooterContent>
     </FooterContainer>
