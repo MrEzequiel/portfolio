@@ -5,16 +5,12 @@ import { MenuMobile, MenuMobileWrapper, NavBarContainer } from './styles'
 
 const links = [
   {
-    href: '#projects',
-    label: 'Projetos'
+    href: '#experience',
+    label: 'Experiência'
   },
   {
     href: '#formation',
     label: 'Formação'
-  },
-  {
-    href: '#experience',
-    label: 'Experiência'
   },
   {
     href: '#contact',
