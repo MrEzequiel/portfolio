@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import Container from '../../../styles/layout/Container'
+import Text from '../../../styles/layout/Text'
 
 export const ExperienceContainer = styled(Container)`
   width: 100%;
@@ -51,7 +52,13 @@ export const TechsList = styled.div`
   display: inline-flex;
   flex-wrap: wrap;
   gap: ${props => props.theme.spaces.extra_small_1};
-
-  #experience-techs {
-  }
 `
+
+
+export const ExperienceDescripitonText = styled(Text)`
+  white-space: break-spaces;
+  line-height: 1.5;
+`
+ExperienceDescripitonText.defaultProps = {
+  variant: 'body3'
+}

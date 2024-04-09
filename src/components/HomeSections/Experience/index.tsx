@@ -10,6 +10,7 @@ import Section from '../../../styles/layout/Section'
 import { Chip } from '../../../styles/layout/Chip'
 import {
   ExperienceContainer,
+  ExperienceDescripitonText,
   ExperienceItem,
   ExperienceList,
   FooterExperience,
@@ -122,9 +123,9 @@ const Experience: FC<ExperienceProps> = ({ experiences }) => {
                 </div>
               </div>
 
-              <Text as="p" variant="body3" id="experience-description">
+              <ExperienceDescripitonText as="p">
                 {experience.description}
-              </Text>
+              </ExperienceDescripitonText>
 
               <FooterExperience>
                 <TechsList>
@@ -132,7 +133,6 @@ const Experience: FC<ExperienceProps> = ({ experiences }) => {
                     as="span"
                     variant="body3"
                     style={{ fontWeight: 700 }}
-                    id="experience-techs"
                   >
                     Tecnologias:
                   </Text>
