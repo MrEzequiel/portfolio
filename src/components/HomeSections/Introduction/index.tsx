@@ -73,7 +73,7 @@ const Introduction: FC = () => {
             </Text>
 
             <S.LinkCurriculum
-              href="https://docs.google.com/document/d/1vunO8uL4iUWRj02AmcJHR3-1D_yTWLFlTVY-VRL0uTs/edit"
+              href="https://docs.google.com/document/d/1q7Ey1dXcwwsTXkVnlx_g2ITCANZgRaACKw2sHT4S8zQ/edit?usp=sharing"
               target="_blank"
               rel="noreferrer"
             >
