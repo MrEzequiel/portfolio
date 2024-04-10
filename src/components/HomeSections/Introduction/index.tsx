@@ -91,7 +91,7 @@ const Introduction: FC = () => {
 
         <S.ScrollIndicator>
           <a href="#about-me">
-            <MdArrowDropDown size={40} color={theme.colorsPrimary.p200} />
+            <MdArrowDropDown size={60} color={theme.colorsPrimary.p700} />
           </a>
         </S.ScrollIndicator>
       </Section>
