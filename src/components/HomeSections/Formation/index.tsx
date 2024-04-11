@@ -26,9 +26,7 @@ const Formation: FC<FormationProps> = ({ formations }) => {
           <TitleSection>Formação</TitleSection>
 
           <Text as="p" variant="body3">
-            Estou formando em Tecnologia em Sistemas para Internet, além disso,
-            venho estudando frequêntemente em cursos para aprender cada vez
-            mais.
+            Sou graduado em Tecnologia em Sistemas para Internet e mantenho atividades de desenvolvimento de algoritmos e web no campus onde me formei. Dedico-me a projetos que auxiliam colegas no aprendizado e na trilha profissional na área da programação.
           </Text>
         </div>
 
