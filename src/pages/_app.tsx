@@ -1,11 +1,11 @@
 import type { AppProps } from 'next/app'
-import { Analytics } from '@vercel/analytics/react'
 
 import Head from 'next/head'
 import Router from 'next/router'
 
 import { ThemeProvider } from 'styled-components'
 
+import Metrics from '../components/Metrics'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
 import GlobalStyles from '../styles/GlobalStyles'
@@ -34,7 +34,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Component {...pageProps} />
       <Footer />
       <GlobalStyles />
-      <Analytics />
+      <Metrics />
     </ThemeProvider>
   )
 }
