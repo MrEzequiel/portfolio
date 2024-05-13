@@ -42,13 +42,12 @@ export const ExperienceItem = ({ experience }: ExperienceItemProps) => {
   const getExperienceDuration = (dateStart: string, dateEnd?: string) => {
     const totalTime = getDifferenceInMilliseconds(dateStart, dateEnd)
 
-    const YEAR_IN_MILISECONDS = 1000 * 60 * 60 * 24 * 365
     const MONTH_IN_MILISECONDS = 1000 * 60 * 60 * 24 * 30
 
-    const years = Math.floor(totalTime / YEAR_IN_MILISECONDS)
-    const totalTimeWithoutYears = totalTime - (years * YEAR_IN_MILISECONDS)
-
-    const months = Math.ceil(totalTimeWithoutYears / MONTH_IN_MILISECONDS)
+    let months = Math.ceil(totalTime / MONTH_IN_MILISECONDS)
+    let years = Math.trunc(months / 12);
+    years %= 12;
+    months -= years * 12;
 
     const monthsLabel = `${months} ${getPlurals(months, 'mês', 'meses')}`
     const yearsLabel = `${years} ${getPlurals(years, 'ano', 'anos')}`
